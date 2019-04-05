@@ -1,7 +1,6 @@
 package com.app.homework;
 
 import com.app.homework.exceptions.DeviceArrayEmptyException;
-import com.app.homework.exceptions.DeviceArrayFullException;
 import com.app.homework.interfaces.IStorage;
 
 import java.util.Arrays;
@@ -12,44 +11,62 @@ import java.util.Arrays;
 public class DeviceArrayStorage implements IStorage {
 
     private Device[] devicesStorage;
-    private int size = 0;
-    private int arrayInitialLength = 10;
+    private int n;
+    private int capacity;
 
-    public DeviceArrayStorage(){
-        // initialize default length of device array
-        devicesStorage = new Device[arrayInitialLength];
+    public DeviceArrayStorage(int capacity) {
+        this.capacity = capacity;
+        devicesStorage = new Device[capacity];
     }
 
-    public Device[] getDevicesStorage() {
-        return devicesStorage;
+    public DeviceArrayStorage() {
+        this(10);
     }
+
 
     @Override
     public void add(Device device) {
-        if(size >= arrayInitialLength){
-            throw new DeviceArrayFullException("Device Storage is full");
-        } else {
-            devicesStorage[size] = device;
-            size++;
+        if (n + 1 > devicesStorage.length) {
+            devicesStorage = Arrays.copyOf(devicesStorage, devicesStorage.length + capacity);
         }
+        devicesStorage[n] = device;
+        n++;
     }
 
     @Override
-    public void remove(int index) throws DeviceArrayEmptyException {
-        // not implemented
-    }
-
-    @Override
-    public Device getValue(int index) {
+    public Device get(int index) {
         return devicesStorage[index];
     }
 
     @Override
-    public int size() {
-        return devicesStorage.length;
+    public Device set(int index, Device item) {
+        Device oldValue = devicesStorage[index];
+        devicesStorage[index] = item;
+        return oldValue;
     }
 
-    public boolean compareArrays(Device[] array){
-       return Arrays.equals(this.devicesStorage, array);
+    @Override
+    public void remove(int index) throws DeviceArrayEmptyException {
+        for (int i = index; i < n - 1; i++) {
+            devicesStorage[i] = devicesStorage[i + 1];
+        }
+        devicesStorage[n - 1] = null;
+        n--;
+    }
+
+    @Override
+    public int size() {
+        return n;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    @Override
+    public void clear() {
+        devicesStorage = new Device[devicesStorage.length];
+        n = 0;
     }
 }
