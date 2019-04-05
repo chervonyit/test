@@ -3,6 +3,8 @@ package com.app.homework.devices;
 import com.app.homework.Device;
 import com.app.homework.utils.ConsoleOutputUtils;
 
+import java.util.ArrayList;
+
 public class Laptop extends Device {
 
     private int screenSize;

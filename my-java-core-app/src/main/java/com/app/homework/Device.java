@@ -1,11 +1,16 @@
 package com.app.homework;
 
 import com.app.homework.exceptions.DeviceNotFoundException;
+import com.app.homework.iterators.DeviceIterator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public abstract class Device extends Product {
 
     private String model;
     private final String manufacturer;
+    private ArrayList<Device> devices = new ArrayList<Device>();
 
     // initialize constant in init block
     {

@@ -4,6 +4,8 @@ import com.app.homework.Device;
 import com.app.homework.utils.ConsoleOutputUtils;
 import com.app.homework.utils.DataGeneratorUtils;
 
+import java.util.ArrayList;
+
 public class Phone extends Device {
 
     private boolean monoBlock;
