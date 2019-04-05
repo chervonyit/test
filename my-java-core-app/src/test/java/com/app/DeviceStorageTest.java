@@ -60,4 +60,14 @@ public class DeviceStorageTest {
         deviceArrayStorage.add(laptop);
         Assert.assertFalse(deviceArrayStorage.isEmpty());
     }
+
+    @Test
+    public void clearTest(){
+        Device laptop = new Laptop();
+        DeviceArrayStorage deviceArrayStorage = new DeviceArrayStorage();
+        deviceArrayStorage.add(laptop);
+
+        deviceArrayStorage.clear();
+        Assert.assertTrue(deviceArrayStorage.size() == 0);
+    }
 }
