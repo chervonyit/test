@@ -1,6 +1,6 @@
 package com.app.сh16.arraylist;
 
-public interface MyList {
+public interface MyList extends Iterable {
 
     public int size();
 

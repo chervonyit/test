@@ -1,11 +1,14 @@
 package com.app.сh16.arraylist;
 
 import java.util.Arrays;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 
 public class MyArrayListImpl implements MyList {
     private Object[] data;
     private int n;
     private int capacity;
+    private long version;
 
     public MyArrayListImpl(int capacity) {
         this.capacity = capacity;
@@ -28,6 +31,7 @@ public class MyArrayListImpl implements MyList {
 
     @Override
     public void add(Object item) {
+        version++;
         if (n + 1 > data.length) {
             data = Arrays.copyOf(data, data.length + capacity);
         }
@@ -48,6 +52,7 @@ public class MyArrayListImpl implements MyList {
 
     @Override
     public void remove(int index) {
+        version++;
         for (int i = index; i < n - 1; i++) {
             data[i] = data[i + 1];
         }
@@ -59,5 +64,36 @@ public class MyArrayListImpl implements MyList {
     public void clear() {
         data = new Object[data.length];
         n = 0;
+    }
+
+
+
+
+    @Override
+    public Iterator iterator() {
+        return new Iterator() {
+            private int index;
+            private long itrVersion = version;
+
+            @Override
+            public boolean hasNext() {
+                return index < n;
+            }
+
+            @Override
+            public Object next() {
+                if (itrVersion != version) {
+                    throw new ConcurrentModificationException();
+                }
+                Object res = get(index);
+                index++;
+                return res;
+            }
+
+            @Override
+            public void remove() {
+                MyArrayListImpl.this.remove(index - 1);
+            }
+        };
     }
 }

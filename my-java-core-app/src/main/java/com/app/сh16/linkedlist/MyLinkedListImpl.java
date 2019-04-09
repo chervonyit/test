@@ -2,6 +2,8 @@ package com.app.сh16.linkedlist;
 
 import com.app.сh16.arraylist.MyList;
 
+import java.util.Iterator;
+
 public class MyLinkedListImpl implements MyList {
     private Node root;
     private int n;
@@ -114,5 +116,10 @@ public class MyLinkedListImpl implements MyList {
     public void clear() {
         root=null;
         n=0;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
     }
 }
