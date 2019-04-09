@@ -31,7 +31,7 @@ public class DeviceArraysMain {
         deviceArray1.add(laptop);
         deviceArray1.add(tv);
 
-        System.out.println(deviceArray1.compareArrays(deviceArrayStorage.getDevicesStorage()));
+        //System.out.println(deviceArray1.compareArrays(deviceArrayStorage.getDevicesStorage()));
 
         // catch exception that potentially can be thrown in remove method
         try {

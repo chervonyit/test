@@ -7,6 +7,9 @@ public interface IStorage {
 
     void add(Device device);
     void remove(int index) throws DeviceArrayEmptyException;
-    Device getValue(int index);
+    Object set(int index, Object item);
+    Device get(int index);
     int size();
+    boolean isEmpty();
+    void clear();
 }
