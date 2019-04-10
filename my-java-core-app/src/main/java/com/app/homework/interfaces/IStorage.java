@@ -6,8 +6,8 @@ import com.app.homework.exceptions.DeviceArrayEmptyException;
 public interface IStorage {
 
     void add(Device device);
-    void remove(int index) throws DeviceArrayEmptyException;
-    Object set(int index, Object item);
+    void remove(int index);
+    Device set(int index, Device item);
     Device get(int index);
     int size();
     boolean isEmpty();

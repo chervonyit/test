@@ -23,9 +23,6 @@ public class DeviceArrayStorage implements IStorage {
         this(10);
     }
 
-    public Device[] getDevicesStorage() {
-        return devicesStorage;
-    }
 
     @Override
     public void add(Device device) {
@@ -42,19 +39,19 @@ public class DeviceArrayStorage implements IStorage {
     }
 
     @Override
-    public void remove(int index) throws DeviceArrayEmptyException {
+    public Device set(int index, Device item) {
+        Device oldValue = devicesStorage[index];
+        devicesStorage[index] = item;
+        return oldValue;
+    }
+
+    @Override
+    public void remove(int index) {
         for (int i = index; i < n - 1; i++) {
             devicesStorage[i] = devicesStorage[i + 1];
         }
         devicesStorage[n - 1] = null;
         n--;
-    }
-
-    @Override
-    public Object set(int index, Object item) {
-        Device oldValue = devicesStorage[index];
-        devicesStorage[index] = (Device) item;
-        return oldValue;
     }
 
     @Override
