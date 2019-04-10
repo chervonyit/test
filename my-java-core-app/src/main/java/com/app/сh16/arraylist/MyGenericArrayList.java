@@ -83,7 +83,7 @@ public class MyGenericArrayList<T>  implements MyGenericList<T> {
         if(object==this){
             return true;
         }
-        if(MyGenericList.class == getClass()){
+        if(object.getClass() == getClass()){
             MyGenericList tmp = (MyGenericList) object;
             if(tmp.size()==size()){
                 for(int i=0;i<size();i++){

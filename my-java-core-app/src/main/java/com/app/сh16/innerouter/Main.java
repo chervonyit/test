@@ -13,6 +13,13 @@ public class Main {
         MyOuterClass.MyInnerA myInnerA4 = new MyOuterClass(). new MyInnerA();
 
         MyOuterClass.MyInnerStaticA myInnerStaticA1 = new MyOuterClass.MyInnerStaticA();
+
+        System.out.println("------------------------------");
+        myInnerA4.myMethod();
+
+        System.out.println("----------static--------------------");
+        myInnerStaticA1.method();
+
     }
 
 }
