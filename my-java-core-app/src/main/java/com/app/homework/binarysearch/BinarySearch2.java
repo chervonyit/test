@@ -5,19 +5,20 @@ public class BinarySearch2 implements Searcher {
 
     @Override
     public int search(int[] data, int target) {
-        int left = 0;
-        int right = data.length - 1;
+        int start = 0;
+        int end = data.length - 1;
 
-        while (left <= right) {
-            int middle = (left + right) / 2;
+        while (start <= end) {
+            int mid = (start + end) / 2;
 
-            if(target == data[middle]){
-                return middle;
+            if (target == data[mid]) {
+                return mid;
             }
-            if (target < data[middle]) {
-                right = middle - 1;
+
+            if (target < data[mid]) {
+                end = mid - 1;
             } else {
-                left = middle + 1;
+                start = mid + 1;
             }
         }
         return -1;
