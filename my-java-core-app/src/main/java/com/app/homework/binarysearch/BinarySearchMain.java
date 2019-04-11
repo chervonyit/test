@@ -11,8 +11,8 @@ public class BinarySearchMain {
         System.out.println("searched value = " + value);
 
         System.out.println("------------------------------");
-        BinarySearch2 binarySearch2 = new BinarySearch2();
-        int value1 = binarySearch2.search(data, 7);
+        BinarySearch3 binarySearch3 = new BinarySearch3();
+        int value1 = binarySearch3.search(data, 7);
         System.out.println("value = " + value1);
 
     }

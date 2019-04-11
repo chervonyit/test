@@ -34,17 +34,13 @@ public class DeviceArraysMain {
         //System.out.println(deviceArray1.compareArrays(deviceArrayStorage.getDevicesStorage()));
 
         // catch exception that potentially can be thrown in remove method
-        try {
-            deviceArrayStorage.remove(0);
-        } catch (DeviceArrayEmptyException e) {
-            e.printStackTrace();
-        }
 
-        // looping through the deviceArrayStorage and print model of each device
-        for(Device d : deviceArrayStorage.getDevicesStorage()){
-            if(d != null){
-                System.out.println(d.getModel());
-            }
-        }
+
+//        // looping through the deviceArrayStorage and print model of each device
+//        for(Device d : deviceArrayStorage.getDevicesStorage()){
+//            if(d != null){
+//                System.out.println(d.getModel());
+//            }
+//        }
     }
 }
