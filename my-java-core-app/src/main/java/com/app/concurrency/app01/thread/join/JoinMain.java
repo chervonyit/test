@@ -21,8 +21,6 @@ public class JoinMain {
         System.out.println("SEND MAIL");
     }
 
-
-
     public static void main1(String[] args) throws InterruptedException {
         System.out.println("---------Main  BEGIN------");
         MyThread myThread = new MyThread();

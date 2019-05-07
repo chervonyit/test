@@ -8,8 +8,8 @@ public class BubbleSorter implements Sorter {
         for(int i=0;i<data.length-1;i++){
             for(int j=i;j<data.length;j++) {
                 if (data[i] > data[j]) {
-       //             swap(i, j, data);
-                     swap2(i, j, data);
+                    swap(i, j, data);
+                     //swap2(i, j, data);
                 }
             }
         }
@@ -20,7 +20,6 @@ public class BubbleSorter implements Sorter {
         data[i]=data[j];
         data[j]=tmp;
     }
-
 
     /*
     a=a
