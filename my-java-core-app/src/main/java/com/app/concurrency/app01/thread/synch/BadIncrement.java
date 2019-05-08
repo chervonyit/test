@@ -3,7 +3,7 @@ package com.app.concurrency.app01.thread.synch;
 public class BadIncrement {
     private int value;
 
-    public void increment(){
+    public  void increment(){
         value++;
     }
 
