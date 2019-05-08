@@ -10,6 +10,10 @@ public class MyDataThread extends Thread {
         this.badIncrement = badIncrement;
     }
 
+    public MyDataThread(BadIncrement badIncrement){
+        this.badIncrement = badIncrement;
+    }
+
     @Override
     public void run(){
         for(int i = 0; i < n; i++){
