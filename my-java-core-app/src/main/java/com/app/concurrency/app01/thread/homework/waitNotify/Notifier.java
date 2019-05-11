@@ -1,4 +1,4 @@
-package com.app.concurrency.app01.thread.homework.deadlock;
+package com.app.concurrency.app01.thread.homework.waitNotify;
 
 public class Notifier implements Runnable {
 
