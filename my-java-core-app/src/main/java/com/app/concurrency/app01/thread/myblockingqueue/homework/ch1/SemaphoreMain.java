@@ -34,7 +34,7 @@ public class SemaphoreMain {
             try {
                 runUnsafe();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("thread interrupted " + getName());
             }
         }
 
