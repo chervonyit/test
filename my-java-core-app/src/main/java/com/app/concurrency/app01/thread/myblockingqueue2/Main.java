@@ -1,7 +1,5 @@
 package com.app.concurrency.app01.thread.myblockingqueue2;
 
-import com.app.concurrency.app01.thread.myblockingqueue.Consumer;
-
 public class Main {
 
     public static void main(String[] args) {

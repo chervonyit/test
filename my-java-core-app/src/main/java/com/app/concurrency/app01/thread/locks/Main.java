@@ -17,13 +17,10 @@ public class Main {
         MyPlan myPlan = new MyPlan(lock, condition2);
         MyStore myStore = new MyStore(lock, condition2, myPlan);
 
-
         myLockProducer.start();
         myLockConsumer.start();
 
         myPlan.start();
         myStore.start();
-
-
     }
 }
