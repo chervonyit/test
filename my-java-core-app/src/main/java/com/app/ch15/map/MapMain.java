@@ -32,7 +32,6 @@ public class MapMain {
         System.out.println("size="+n);
         System.out.println("isEmpty="+isEmpty);
 
-
         Object valueByKey=map.remove("b");
         System.out.println("valueByKey="+valueByKey);
 

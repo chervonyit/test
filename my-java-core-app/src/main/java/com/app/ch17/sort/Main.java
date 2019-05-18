@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] data = {1,0,2,9,3,8,4,7,5,6};
+        int[] data = {5,3,2,1};
         Sorter sorter = new BubbleSorter();
         //Sorter sorter = new SelectionSorter();
         //Sorter sorter = new InsertionSorter();
