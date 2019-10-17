@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+">
+
+
+
+    <bean id="userService" class="com.app.service.UserServiceImpl">
+        <property name="dao" ref="dao"></property>
+        <property name="someValue" value="Hello!!!"></property>
+    </bean>
+
+    <bean id="dao" class="com.app.repository.DaoImpl1" init-method="init" destroy-method="destroy"/>
+
+
+    <bean id="userA" class="com.app.domain.User" lazy-init="false" scope="singleton">
+        <property name="age" value="1"/>
+        <property name="name" value="NameA"/>
+    </bean>
+
+    <bean id="userB" class="com.app.domain.User" lazy-init="true" scope="prototype">
+        <property name="age" value="1"/>
+        <property name="name" value="NameB"/>
+    </bean>
+
+
+
+
+</beans>

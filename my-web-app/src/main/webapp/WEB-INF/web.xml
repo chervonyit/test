@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <servlet-mapping>
+        <servlet-name>MyAdminRoleServlet</servlet-name>
+        <url-pattern>/MyAdminRoleServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyAdminRoleServlet</servlet-name>
+        <servlet-class>com.app05.roles.MyAdminRoleServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AccessDataServlet</servlet-name>
+        <url-pattern>/AccessDataServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AccessDataServlet</servlet-name>
+        <servlet-class>com.app05.roles.AccessDataServlet</servlet-class>
+    </servlet>
+
+
+    <security-constraint>
+        <display-name>Constraint1</display-name>
+        <web-resource-collection>
+            <web-resource-name>ProtectedServlet</web-resource-name>
+            <description/>
+            <url-pattern>/MyAdminRoleServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>appadmin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+
+
+    <!--<login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/errorlogin.html</form-error-page>
+        </form-login-config>
+    </login-config>
+    -->
+
+    <security-role>
+        <description/>
+        <role-name>appuser</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>appadmin</role-name>
+    </security-role>
+
+    <error-page>
+        <location>/404error.html</location>
+        <error-code>404</error-code>
+    </error-page>
+    <error-page>
+        <location>/NumberFormatExceptionError.html</location>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+    </error-page>
+</web-app>
